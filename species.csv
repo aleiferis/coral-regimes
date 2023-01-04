@@ -1,0 +1,318 @@
+Specie Code, Taxon Name, Family, Trophic level
+CHOR, Chaetodon ornatissimus, Chaetodontidae, Corallivore
+CHME, Chaetodon meyeri, Chaetodontidae, Corallivore
+CHLT, Chaetodon lunulatus, Chaetodontidae, Corallivore
+PLJO, Plectroglyphidodon johnstonianus,Pomacentridae, Corallivore
+CHQU, Chaetodon quadrimaculatus, Chaetodontidae, Corallivore
+CHMU, Chaetodon multicinctus, Chaetodontidae, Corallivore
+CADU, Cantherhines dumerilii, Monacanthidae, Corallivore
+EXBR, Exallias brevis, Blenniidae, Corallivore
+CHRE, Chaetodon reticulatus, Chaetodontidae, Corallivore
+CHUN, Chaetodon unimaculatus, Chaetodontidae, Corallivore
+ARME, Arothron meleagris, Tetraodontidae, Corallivore
+PESP, Pervagor spilosoma, Monacanthidae, Corallivore
+CHLI, Chaetodon lineolatus, Chaetodontidae, Corallivore
+CHTR, Chaetodon trifascialis, Chaetodontidae, Corallivore
+CTST, Ctenochaetus strigosus, Acanthuridae, Detritivore (exclusively)
+CTHA, Ctenochaetus hawaiiensis, Acanthuridae, Detritivore (exclusively)
+TRIG, Balistidae sp, Balistidae, Herbivore (Grazer)
+BLEN, Blenniidae sp, Blenniidae, Herbivore (Grazer)
+CISP, Cirripectes sp, Blenniidae, Herbivore (Grazer)
+CIOB, Cirripectes obscurus, Blenniidae, Herbivore (Grazer)
+CIVA, Cirripectes vanderbilti, Blenniidae, Herbivore (Grazer)
+CIVA, Cirripectes vanderbilti, Blenniidae, Herbivore (Grazer)
+CAZO, Calotomus zonarchus, Scaridae, Herbivore (Browser)
+KYHA, Kyphosus hawaiiensis, Kyphosidae, Herbivore (Browser)
+NALI, Naso lituratus, Acanthuridae, Herbivore (Browser)
+KYCI, Kyphosus cinerascens, Kyphosidae, Herbivore (Browser)
+CACA, Calotomus carolinus, Scaridae, Herbivore (Browser)
+KYVA, Kyphosus vaigiensis, Kyphosidae, Herbivore (Browser)
+NAUN, Naso unicornis, Acanthuridae, Herbivore (Browser)
+CHUB, Kyphosidae sp, Kyphosidae, Herbivore (Browser)
+NASP, Naso sp, Acanthuridae, Herbivore (Browser)
+KYSA, Kyphosus sandwicensis, Kyphosidae, Herbivore (Browser)
+MENI, Melichthys niger, Balistidae, Herbivore (Browser)
+PLSI, Plectroglyphidodon sindonis, Pomacentridae, Herbivore (Grazer)
+CEPO, Centropyge potteri, Pomacanthidae, Herbivore (Grazer)
+STFA, Stegastes fasciolatus, Pomacentridae, Herbivore (Grazer)
+ZEFL, Zebrasoma flavescens, Acanthuridae, Herbivore (Grazer)
+ACNF, Acanthurus nigrofuscus, Acanthuridae, Herbivore (Grazer)
+ACNC, Acanthurus nigricans, Acanthuridae, Herbivore (Grazer)
+ACNR, Acanthurus nigroris, Acanthuridae, Herbivore (Grazer)
+ACLE, Acanthurus leucopareius, Acanthuridae, Herbivore (Grazer)
+ACAC, Acanthurus achilles, Acanthuridae, Herbivore (Grazer)
+ACAN, Acanthurus achilles X nigricans hybrid (rackliffei), Acanthuridae, Herbivore (Grazer)
+ACTR, Acanthurus triostegus, Acanthuridae, Herbivore (Grazer)
+ACGU, Acanthurus guttatus, Acanthuridae, Herbivore (Grazer)
+ACLI, Acanthurus lineatus, Acanthuridae, Herbivore (Grazer)
+ACOL, Acanthurus olivaceus, Acanthuridae, Herbivore (Grazer)
+ZEVE, Zebrasoma veliferum, Acanthuridae, Herbivore (Grazer)
+ACBL, Acanthurus blochii, Acanthuridae, Herbivore (Grazer)
+ACDU, Acanthurus dussumieri, Acanthuridae, Herbivore (Grazer)
+ACSP, Acanthurus sp, Acanthuridae, Herbivore (Grazer)
+ACXA, Acanthurus xanthopterus, Acanthuridae, Herbivore (Grazer)
+SURG, Acanthuridae sp, Acanthuridae, Herbivore (Grazer)
+CHCH, Chanos chanos, Chanidae, Herbivore (Grazer)
+CEFI, Centropyge fisheri, Pomacanthidae, Herbivore (Grazer)
+CELO, Centropyge loricula, Pomacanthidae, Herbivore (Grazer)
+MEVI, Melichthys vidua, Balistidae, Herbivore (Grazer)
+SCPS, Scarus psittacus, Scaridae, Herbivore (Scraper)
+SCDU, Scarus dubius, Scaridae, Herbivore (Scraper)
+CHSO, Chlorurus sordidus, Scaridae, Herbivore (Scraper)
+CHPE, Chlorurus perspicillatus, Scaridae, Herbivore (Scraper)
+PARR, Scaridae sp, Scaridae, Herbivore (Scraper)
+SCRU, Scarus rubroviolaceus, Scaridae, Herbivore (Scraper)
+SCSP, Scarus sp, Scaridae, Herbivore (Scraper)
+CLSP, Chlorurus sp, Scaridae, Herbivore (Scraper)
+CASA, Cantherhines sandwichiensis, Monacanthidae, Herbivore (Grazer)
+ABSO, Abudefduf sordidus, Pomacentridae, Herbivore (Grazer)
+PAMA, Parablennius marmoratus, Blenniidae, Herbivore (Grazer)
+ACMA, Acanthurus maculiceps, Acanthuridae, Herbivore (Grazer)
+ASSE, Asterropteryx semipunctata, Gobiidae, Herbivore (Grazer)
+CEFL, Centropyge flavissima, Pomacanthidae, Herbivore (Grazer)
+CEIN, Centropyge interruptus, Pomacanthidae, Herbivore (Grazer)
+STNI, Stegastes nigricans, Pomacentridae, Herbivore (Grazer)
+STSP, Stegastes sp, Pomacentridae, Herbivore (Grazer)
+CASO, Canthigaster solandri, Tetraodontidae, Herbivore (Grazer)
+GOAT, Mullidae sp, Mullidae, Large Invert. Feeder
+OPPU, Oplegnathus punctatus, Oplegnathidae, Large Invert. Feeder
+INUM, Iniistius umbrilatus, Labridae, Large Invert. Feeder
+MUMI, Mulloidichthys mimicus, Mullidae, Large Invert. Feeder
+COBA, Coris ballieui, Labridae, Large Invert. Feeder
+CAAM, Canthigaster amboinensis, Tetraodontidae, Large Invert. Feeder
+CACO, Canthigaster coronata, Tetraodontidae, Large Invert. Feeder
+THQU, Thalassoma quinquevittatum, Labridae, Large Invert. Feeder
+COVE, Coris venusta, Labridae, Large Invert. Feeder
+RHRE, Rhinecanthus rectangulus, Balistidae, Large Invert. Feeder
+SUBU, Sufflamen bursa, Balistidae, Large Invert. Feeder
+RHAC, Rhinecanthus aculeatus, Balistidae, Large Invert. Feeder
+SUFR, Sufflamen fraenatum, Balistidae, Large Invert. Feeder
+LUKA, Lutjanus kasmira, Lutjanidae, Large Invert. Feeder
+ARHI, Arothron hispidus, Tetraodontidae, Large Invert. Feeder
+FOFL, Forcipiger flavissimus, Chaetodontidae, Large Invert. Feeder
+THLU, Thalassoma lutescens, Labridae, Large Invert. Feeder
+THCR, Thalassoma duperrey/lutescens hybrid, Labridae, Large Invert. Feeder
+THDU, Thalassoma duperrey, Labridae, Large Invert. Feeder
+CIFA, Cirrhitops fasciatus, Cirrhitidae, Large Invert. Feeder
+PAAR, Paracirrhites arcatus, Cirrhitidae, Large Invert. Feeder
+PSOC, Pseudocheilinus octotaenia, Labridae, Large Invert. Feeder
+OXBI, Oxycheilinus bimaculatus, Labridae, Large Invert. Feeder
+NOTA, Novaculichthys taeniourus, Labridae, Large Invert. Feeder
+CIPI, Cirrhitus pinnulatus, Cirrhitidae, Large Invert. Feeder
+NESA, Neoniphon sammara, Holocentridae, Large Invert. Feeder
+GOVA, Gomphosus varius, Labridae, Large Invert. Feeder
+THTR, Thalassoma trilobatum, Labridae, Large Invert. Feeder
+PAPL, Parupeneus pleurostigma, Mullidae, Large Invert. Feeder
+SATI, Sargocentron tiere, Holocentridae, Large Invert. Feeder
+PAIN, Parupeneus insularis, Mullidae, Large Invert. Feeder
+PAMU, Parupeneus multifasciatus, Mullidae, Large Invert. Feeder
+DIHO, Diodon holocanthus, Diodontidae, Large Invert. Feeder
+COGA, Coris gaimard, Labridae, Large Invert. Feeder
+MUFL, Mulloidichthys flavolineatus, Mullidae, Large Invert. Feeder
+THBA, Thalassoma ballieui, Labridae, Large Invert. Feeder
+THPU, Thalassoma purpureum, Labridae, Large Invert. Feeder
+MUPF, Mulloidichthys pfluegeri, Mullidae, Large Invert. Feeder
+PAPO, Parupeneus porphyreus, Mullidae, Large Invert. Feeder
+SASP, Sargocentron spiniferum, Holocentridae, Large Invert. Feeder
+BOBI, Bodianus bilunulatus, Labridae, Large Invert. Feeder
+MOGR, Monotaxis grandoculis, Lethrinidae, Large Invert. Feeder
+BAPO, Balistes polylepis, Balistidae, Large Invert. Feeder
+DIHY, Diodon hystrix, Diodontidae, Large Invert. Feeder
+GYZE, Gymnomuraena zebra, Muraenidae, Large Invert. Feeder
+AENA, Aetobatus narinari, Myliobatidae, Large Invert. Feeder
+SECO, Sebastapistes coniorta, Scorpaenidae, Large Invert. Feeder
+COFL, Coris flavovittata, Labridae, Large Invert. Feeder
+PSTE, Pseudocheilinus tetrataenia, Labridae, Large Invert. Feeder
+LUFU, Lutjanus fulvus, Lutjanidae, Large Invert. Feeder
+GYEU, Gymnothorax eurostus, Muraenidae, Large Invert. Feeder
+INPA, Iniistius pavo, Labridae, Large Invert. Feeder
+DEBA, Dendrochirus barberi, Scorpaenidae, Large Invert. Feeder
+PRME, Priacanthus meeki, Priacanthidae, Large Invert. Feeder
+CHIN, Cheilio inermis, Labridae, Large Invert. Feeder
+GOVI, Goniistius vittatus, Cheilodactylidae, Large Invert. Feeder
+NESP, Neoniphon sp, Holocentridae, Large Invert. Feeder
+SACA, Sargocentron caudimaculatum, Holocentridae, Large Invert. Feeder
+THDQ, Thalassoma duperrey/quinquevittatum hybrid, Labridae, Large Invert. Feeder
+THSP, Thalassoma sp, Labridae, Large Invert. Feeder
+BRMU, Brotula multibarbata, Ophidiidae, Large Invert. Feeder
+OPFA, Oplegnathus fasciatus, Oplegnathidae, Large Invert. Feeder
+POSE, Polydactylus sexfilis, Polynemidae, Large Invert. Feeder
+BIGE, Priacanthus sp, Priacanthidae, Large Invert. Feeder
+HECR, Heteropriacanthus cruentatus, Priacanthidae, Large Invert. Feeder
+INAN, Iniistius aneitensis, Labridae, Large Invert. Feeder
+ECNE, Echidna nebulosa, Muraenidae, Large Invert. Feeder
+TROB, Triaenodon obesus, Carcharhinidae, Large Predator
+CAAB, Carcharhinus amblyrhynchos, Carcharhinidae, Large Predator
+CAGA, Carcharhinus galapagensis, Carcharhinidae, Large Predator
+CAME, Caranx melampygus, Carangidae, Large Predator
+CAIG, Caranx ignobilis, Carangidae, Large Predator
+APVI, Aprion virescens, Lutjanidae, Large Predator
+SEDU, Seriola dumerili, Carangidae, Large Predator
+CALU, Caranx lugubris, Carangidae, Large Predator
+CASP, Caranx sp, Carangidae, Large Predator
+APSP, Apogon sp, Apogonidae, Planktivore
+CARD, Apogonidae sp, Apogonidae, Planktivore
+MYSP, Myripristinae sp, Holocentridae, Planktivore
+NABR, Naso brevirostris, Acanthuridae, Planktivore
+NAAN, Naso annulatus, Acanthuridae, Planktivore
+CHKL, Chaetodon kleinii, Chaetodontidae, Planktivore
+CHAC, Chromis acares, Pomacentridae, Planktivore
+KUSA, Kuhlia sandvicensis, Kuhliidae, Planktivore
+APKA, Apogon kallopterus, Apogonidae, Planktivore
+GUCU, Gunnellichthys curiosus, Microdesmidae, Planktivore
+APMA, Apogon maculiferus, Apogonidae, Planktivore
+MYAM, Myripristis amaena, Holocentridae, Planktivore
+OXTY, Oxycirrhites typus, Cirrhitidae, Planktivore
+ABVA, Abudefduf vaigiensis, Pomacentridae, Planktivore
+ABAB, Abudefduf abdominalis, Pomacentridae, Planktivore
+CHLC, Chromis leucura, Pomacentridae, Planktivore
+SPDE, Spratelloides delicatulus, Clupeidae, Planktivore
+CHHA, Chromis hanui, Pomacentridae, Planktivore
+NEMA, Nemateleotris magnifica, Ptereleotridae, Planktivore
+CIJO, Cirrhilabrus jordani, Labridae, Planktivore
+CHAG, Chromis agilis, Pomacentridae, Planktivore
+DAAL, Dascyllus albisella, Pomacentridae, Planktivore
+PTHE, Ptereleotris heteroptera, Ptereleotridae, Planktivore
+PSBI, Pseudanthias bicolor, Serranidae, Planktivore
+CHVA, Chromis vanderbilti, Pomacentridae, Planktivore
+CHMI, Chaetodon miliaris, Chaetodontidae, Planktivore
+HEPO, Hemitaurichthys polylepis, Chaetodontidae, Planktivore
+CHOV, Chromis ovalis, Pomacentridae, Planktivore
+HEDI, Heniochus diphreutes, Chaetodontidae, Planktivore
+HETH, Hemitaurichthys thompsoni, Chaetodontidae, Planktivore
+CHVE, Chromis verater, Pomacentridae, Planktivore
+XAAU, Xanthichthys auromarginatus, Balistidae, Planktivore
+MYKU, Myripristis kuntee, Holocentridae, Planktivore
+ACTH, Acanthurus thompsoni, Acanthuridae, planktivore
+MYBE, Myripristis berndti, Holocentridae, Planktivore
+DEMA, Decapterus macarellus, Carangidae, Planktivore
+NAHE, Naso hexacanthus, Acanthuridae, Planktivore
+SNDP, Pinguipedidae sp, Pinguipedidae, Planktivore
+SECR, Selar crumenophthalmus, Carangidae, Planktivore
+XAME, Xanthichthys mento, Balistidae, Planktivore
+ENPU, Encrasicholina purpurea, Engraulidae, Planktivore
+MYVI, Myripristis vittata, Holocentridae, Planktivore
+MABI, Manta birostris, Myliobatidae, Planktivore
+GEPE, Genicanthus personatus, Pomacanthidae, Planktivore
+ANTH, Anthias sp, Serranidae, Planktivore
+PSHW, Pseudanthias ventralis hawaiiensis, Serranidae, Planktivore
+PSTH, Pseudanthias thompsoni, Serranidae, Planktivore
+SOLD, Myripristis sp, Holocentridae, Planktivore
+NACA, Naso caesius, Acanthuridae, Planktivore
+NAMA, Naso maculatus, Acanthuridae, Planktivore
+CATY, Caracanthus typicus, Caracanthidae, Small Invert. Feeder
+SAPP, Sargocentron sp, Holocentridae, Small Invert. Feeder
+GOBI, Gobiidae sp, Gobiidae, Small Invert. Feeder
+PUFF, Tetraodontidae sp, Tetraodontidae, Small Invert. Feeder
+AMBI, Amblycirrhitus bimacula, Cirrhitidae, Small Invert. Feeder
+ECNE, Echidna nebulosa, Muraenidae, Large Invert. Feeder
+TROB, Triaenodon obesus, Carcharhinidae, Large Predator
+CAAB, Carcharhinus amblyrhynchos, Carcharhinidae, Large Predator
+CAGA, Carcharhinus galapagensis, Carcharhinidae, Large Predator
+CAME, Caranx melampygus, Carangidae, Large Predator
+CAIG, Caranx ignobilis, Carangidae, Large Predator
+APVI, Aprion virescens, Lutjanidae, Large Predator
+SEDU, Seriola dumerili, Carangidae, Large Predator
+CALU, Caranx lugubris, Carangidae, Large Predator
+CASP, Caranx sp, Carangidae, Large Predator
+APSP, Apogon sp, Apogonidae, Planktivore
+CARD, Apogonidae sp, Apogonidae, Planktivore
+MYSP, Myripristinae sp, Holocentridae, Planktivore
+CAJA, Canthigaster jactator, Tetraodontidae, Small Invert. Feeder
+PASC, Parapercis schauinslandii, Pinguipedidae, Small Invert. Feeder
+WRAS, Labridae sp, Labridae, Small Invert. Feeder
+PSCE, Pseudojuloides cerasinus, Labridae, Small Invert. Feeder
+GYMT, Gymnothorax melatremus, Muraenidae, Small Invert. Feeder
+PLIM, Plectroglyphidodon imparipennis, Pomacentridae, Small Invert. Feeder
+CHFR, Chaetodon fremblii, Chaetodontidae, Small Invert. Feeder
+FOLO, Forcipiger longirostris, Chaetodontidae, Small Invert. Feeder
+MAGE, Macropharyngodon geoffroy, Labridae, Small Invert. Feeder
+MAGE, Macropharyngodon geoffroy, Labridae, Small Invert. Feeder
+SADI, Sargocentron diadema, Holocentridae, Small Invert. Feeder
+SAXA, Sargocentron xantherythrum, Holocentridae, Small Invert. Feeder
+APAR, Apolemichthys arcuatus, Pomacanthidae, Small Invert. Feeder
+CHTI, Chaetodon tinkeri, Chaetodontidae, Small Invert. Feeder
+ZACO, Zanclus cornutus, Zanclidae, Small Invert. Feeder
+ANCH, Anampses chrysocephalus, Labridae, Small Invert. Feeder
+CHLU, Chaetodon lunula, Chaetodontidae, Small Invert. Feeder
+CHAU, Chaetodon auriga, Chaetodontidae, Small Invert. Feeder
+CHEP, Chaetodon ephippium, Chaetodontidae, Small Invert. Feeder
+OSME, Ostracion meleagris, Ostraciidae, Small Invert. Feeder
+ANCU, Anampses cuvier, Labridae, Small Invert. Feeder
+ALSC, Aluterus scriptus, Monacanthidae, Small Invert. Feeder
+PEAS, Pervagor aspricaudus, Monacanthidae, Small Invert. Feeder
+PSEV, Pseudocheilinus evanidus, Labridae, Small Invert. Feeder
+HAOR, Halichoeres ornatissimus, Labridae, Small Invert. Feeder
+STBA, Stethojulis balteata, Labridae, Small Invert. Feeder
+SCPA, Scorpaenodes parvipinnis, Scorpaenidae, Small Invert. Feeder
+MABR, Malacanthus brevirostris, Malacanthidae, Small Invert. Feeder
+MUVA, Mulloidichthys vanicolensis, Mullidae, Small Invert. Feeder
+FOBR, Foa brachygramma, Apogonidae, Small Invert. Feeder
+ATIN, Atherinomorus insularum, Atherinidae, Small Invert. Feeder
+CHCI, Chaetodon citrinellus, Chaetodontidae, Small Invert. Feeder
+COFU, Coryphopterus sp, Gobiidae, Small Invert. Feeder
+FUDU, Fusigobius duospilus, Gobiidae, Small Invert. Feeder
+PSMA, Psilogobius mainlandi, Gobiidae, Small Invert. Feeder
+SAPU, Sargocentron punctatissimum, Holocentridae, Small Invert. Feeder
+ANSP, Anampses sp, Labridae, Small Invert. Feeder
+CAVE, Cantherhines verecundus, Monacanthidae, Small Invert. Feeder
+PACH, Parupeneus chrysonemus, Mullidae, Small Invert. Feeder
+LAFO, Lactoria fornasini, Ostraciidae, Small Invert. Feeder
+DOEX, Doryrhamphus excisus excisus, Syngnathidae, Small Invert. Feeder
+LAPH, Labroides-phthirophagus, Labridae, Small Invert. Feeder
+LIZA, Synodontidae sp, Synodontidae, Small Predator
+SCPP, Scorpaenopsis sp, Scorpaenidae, Small Predator
+NEED, Belonidae sp, Belonidae, Small Predator
+CONG, Congridae sp, Congridae, Small Predator
+GYSP, Gymnothorax sp, Muraenidae, Small Predator
+GYJA, Gymnothorax javanicus, Muraenidae, Small Predator
+PAFO, Paracirrhites forsteri, Cirrhitidae, Small Predator
+SYVA, Synodus variegatus, Synodontidae, Small Predator
+SCDI, Scorpaenopsis diabolus, Scorpaenidae, Small Predator
+SAFL, Saurida flamma, Synodontidae, Small Predator
+OXUN, Oxycheilinus unifasciatus, Labridae, Small Predator
+PLAR, Platybelone argalus, Belonidae, Small Predator
+PACY, Parupeneus cyclostomus, Mullidae, Small Predator
+SCCA, Scorpaenopsis cacopsis, Scorpaenidae, Small Predator
+CEAR, Cephalopholis argus, Serranidae, Small Predator
+CAFE, Carangoides ferdau, Carangidae, Small Predator
+SCLY, Scomberoides lysan, Carangidae, Small Predator
+CAOR, Carangoides orthogrammus, Carangidae, Small Predator
+APFU, Aphareus furca, Lutjanidae, Small Predator
+AUCH, Aulostomus chinensis, Aulostomidae, Small Predator
+COCI, Conger cinereus, Congridae, Small Predator
+GYME, Gymnothorax meleagris, Muraenidae, Small Predator
+ENCA, Enchelynassa canina, Muraenidae, Small Predator
+GYUN, Gymnothorax undulatus, Muraenidae, Small Predator
+FICO, Fistularia commersonii, Fistulariidae, Small Predator
+SPBA, Sphyraena barracuda, Sphyraenidae, Small Predator
+GYFL, Gymnothorax flavimarginatus, Muraenidae, Small Predator
+TATR, Taenianotus triacanthus, Scorpaenidae, Small Predator
+SYBI, Synodus binotatus, Synodontidae, Small Predator
+TATR, Taenianotus triacanthus, Scorpaenidae, Small Predator
+SYBI, Synodus binotatus, Synodontidae, Small Predator
+PTSP, Pterois sphex, Scorpaenidae, Small Predator
+ANCO, Antennarius commerson, Antennariidae, Small Predator
+TYCR, Tylosurus crocodilus, Belonidae, Small Predator
+ELBI, Elagatis bipinnulata, Carangidae, Small Predator
+PSDE, Pseudocaranx dentex, Carangidae, Small Predator
+HALF, Hemiramphidae, Hemiramphidae, Small Predator
+MYCH, Myripristis chryseres, Holocentridae, Small Predator
+NEAU, Neoniphon aurolineatus, Holocentridae, Small Predator
+PROL, Pristilepis oligolepis, Holocentridae, Small Predator
+SAEN, Sargocentron ensifer, Holocentridae, Small Predator
+CYLE, Cymolutes lecluse, Labridae, Small Predator
+CYPR, Cymolutes praetextatus, Labridae, Small Predator
+EPIN, Epibulus insidiator, Labridae, Small Predator
+ENPA, Enchelycore pardalis, Muraenidae, Small Predator
+GYST, Gymnothorax steindachneri, Muraenidae, Small Predator
+MORA, Muraenidae, Muraenidae, Small Predator
+MYMA, Myrichthys magnificus, Ophichthidae, Small Predator
+EUAF, Euthynnus affinis, Scombridae, Small Predator
+KAPE, Katsuwonus pelamis, Scombridae, Small Predator
+SEBA, Sebastapistes ballieui, Scorpaenidae, Small Predator
+SESP, Sebastapistes sp, Scorpaenidae, Small Predator
+EPQU, Epinephelus quernus, Serranidae, Small Predator
+SAGR, Saurida gracilis, Synodontidae, Small Predator
+SYDE, Synodus dermatogenys, Synodontidae, Small Predator
+SYUL, Synodus ulae, Synodontidae, Small Predator
