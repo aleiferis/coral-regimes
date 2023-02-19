@@ -111,6 +111,74 @@ def getdata():
     benthic['Small Predator'] =  biomass8['Small Predator']
     benthic['Large Predator'] =  biomass9['Large Predator']
 
+    DistCoast = []
+    DistStream = []
+    Population = []
+    Effluent = []
+    UrbanIndex = []
+    PointIndex = []
+    AgrIndex = []
+    FormPlIndex = []
+    FragIndex = []
+    DitchIndex = []
+
+    sites = np.array(benthic['Site'])
+    for i in range(0,len(sites)):
+        if (len(sites[i])<7):
+            tempsite = sites[i][0:4]+'0'+sites[i][4:]
+            sites[i] = tempsite
+    benthic['Site'] = sites
+
+    human_sites = np.array(human['Site'])
+
+    found = 0
+    for site in benthic['Site']:
+        idx = np.where(site==human_sites)[0]
+        if len(idx)>0: 
+            DistCoast.append(human['DistCoast'][idx[0]])
+            DistStream.append(human['DistStream'][idx[0]])
+            Population.append(human['Population'][idx[0]])
+            Effluent.append(human['Effluent'][idx[0]])
+            UrbanIndex.append(human['UrbanIndex'][idx[0]])
+            PointIndex.append(human['PointIndex'][idx[0]])
+            AgrIndex.append(human['AgrIndex'][idx[0]])
+            FormPlIndex.append(human['FormPlIndex'][idx[0]])
+            FragIndex.append(human['FragIndex'][idx[0]])
+            DitchIndex.append(human['DitchIndex'][idx[0]])
+        else:
+            DistCoast.append(float(0))
+            DistStream.append(float(0))
+            Population.append(float(0))
+            Effluent.append(float(0))
+            UrbanIndex.append(float(0))
+            PointIndex.append(float(0))
+            AgrIndex.append(float(0))
+            FormPlIndex.append(float(0))
+            FragIndex.append(float(0))
+            DitchIndex.append(float(0))
+
+    DistCoast = np.array(DistCoast)
+    DistStream = np.array(DistStream)
+    Population = np.array(Population)
+    Effluent = np.array(Effluent)
+    UrbanIndex = np.array(UrbanIndex)
+    PointIndex = np.array(PointIndex)
+    AgrIndex = np.array(AgrIndex)
+    FormPlIndex = np.array(FormPlIndex)
+    FragIndex = np.array(FragIndex)
+    DitchIndex = np.array(DitchIndex)
+
+    benthic['DistCoast'] = DistCoast
+    benthic['DistStream'] = DistStream
+    benthic['Population'] = Population
+    benthic['Effluent'] = Effluent
+    benthic['UrbanIndex'] = UrbanIndex
+    benthic['PointIndex'] = PointIndex
+    benthic['AgrIndex'] = AgrIndex
+    benthic['FormPlIndex'] = FormPlIndex
+    benthic['FragIndex'] = FragIndex
+    benthic['DitchIndex'] = DitchIndex
+
     benthic.to_csv('benthic_grouped.csv',index=False)
 
     return benthic, benthic_raw, human, species_codes, throphic_levels 
