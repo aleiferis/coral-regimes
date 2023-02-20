@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def biplot(pc,pca_comp,names=None,labels=None):
+    fig = plt.figure()
     xs = pc[:,0]
     ys = pc[:,1]
     coeff = np.multiply(1.0,pca_comp.T)
@@ -26,5 +27,4 @@ def biplot(pc,pca_comp,names=None,labels=None):
     plt.xlabel("PC{}".format(1))
     plt.ylabel("PC{}".format(2))
     plt.grid()
-    plt.show()
     return 0
