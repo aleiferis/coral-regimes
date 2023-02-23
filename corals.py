@@ -10,11 +10,26 @@ from sklearn import decomposition
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import LocalOutlierFactor
 
+import fastcluster as fc
+import seaborn as sns
+from scipy.cluster.hierarchy import fcluster, inconsistent
+from scipy.spatial.distance  import pdist
+from sklearn.manifold import TSNE  
+from time import time
+from mpl_toolkits.mplot3d import Axes3D
+
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.tree import plot_tree
+from sklearn import tree
+from sklearn.metrics import accuracy_score
+
 import getdata
 import plotting
 
 df, benthic_raw, human, species, throphic = getdata.getdata()
 # Separate benthic and biomass data (Benth and Biomass --> bab)
+df_full = df
 bab = df.iloc[:,7:22]   # up to 22 to exclude Large predators
 
 lof = LocalOutlierFactor(n_neighbors=20, p=1, contamination=0.1)
@@ -24,6 +39,7 @@ bab_lof_labels = lof.fit_predict(bab)
 
 # print(biomass.shape)
 bab_inliers = bab.drop(np.where(bab_lof_labels<0)[0], axis='index', inplace=False) 
+df.drop(np.where(bab_lof_labels<0)[0], axis='index', inplace=True) 
 # print(biomass.shape)
 
 benthic = bab_inliers.iloc[:,0:6]   
@@ -80,15 +96,6 @@ plotting.biplot(biomass_pca[:,0:2],pca_biom.components_,names=biomass_names,labe
 # HAC - Hierarchical Agglomerative Clustering
 # ----------------------------------------------------------------------------
 pca_full = np.vstack((benthic_pca[:,0], biomass_pca[:,0], benthic_pca[:,1], biomass_pca[:,1])).T
-
-import fastcluster as fc
-import seaborn as sns
-from scipy.cluster.hierarchy import fcluster, inconsistent
-from scipy.spatial.distance  import pdist
-from sklearn.manifold import TSNE  
-from time import time
-from mpl_toolkits.mplot3d import Axes3D
-
 method = [ 'single', 'complete', 'average', 'ward' ]
 
 Y = pca_full
@@ -105,6 +112,9 @@ dist_lim = np.quantile (Y_links [:,2], 1)
 # ------------------------------------------------------------
 #Y_labels = fcluster (Y_links, dist_lim, criterion ='distance', depth = 2)
 Y_labels = fcluster (Y_links, t = 3, criterion = 'maxclust')
+
+plotting.biplot(benthic_pca[:,0:2],pca_benth.components_,names=benthic_names,labels=Y_labels)
+plotting.biplot(biomass_pca[:,0:2],pca_biom.components_,names=biomass_names,labels=Y_labels)
 
 unique_labels, unique_count = np.unique(Y_labels, return_counts = True)
 
@@ -140,6 +150,37 @@ ax.scatter(
 ax.set_xlabel('pca-one')
 ax.set_ylabel('pca-two')
 ax.set_zlabel('pca-three')
-plt.show()
+# plt.show()
 
 Y_labels_full = np.copy (Y_labels)
+
+
+# ----------------------------------------------------------------------------
+# Supervised part
+# ----------------------------------------------------------------------------
+
+supervised = df.filter(['Label','Site','Latitude','Depth','Population','Effluent'], axis=1)
+supervised['Label'] = Y_labels_full
+
+supervised.to_csv('supervised.csv', sep = ',', header = True)
+
+print(supervised)
+
+y = supervised.iloc[:,5]
+X = supervised.iloc[:,1:5]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+model = DecisionTreeRegressor(random_state=44)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+
+# plt.figure(dpi=150)
+# plot_tree(model, feature_names=X.columns)
+print(tree.export_text(model))
+# plt.savefig('tree.png')
+# plt.close()
+# plt.show()
+
+print(accuracy_score(y_test, predictions))
+
