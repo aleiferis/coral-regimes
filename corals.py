@@ -180,7 +180,7 @@ predictions = model.predict(X_test)
 print(tree.export_text(model))
 # plt.savefig('tree.png')
 # plt.close()
-# plt.show()
+plt.show()
 
 print(accuracy_score(y_test, predictions))
 
