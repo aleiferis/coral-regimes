@@ -24,6 +24,8 @@ from sklearn.tree import plot_tree
 from sklearn import tree
 from sklearn.metrics import accuracy_score
 
+from osgeo import gdal
+
 import getdata
 import plotting
 
@@ -95,7 +97,7 @@ plotting.biplot(biomass_pca[:,0:2],pca_biom.components_,names=biomass_names,labe
 # ----------------------------------------------------------------------------
 # HAC - Hierarchical Agglomerative Clustering
 # ----------------------------------------------------------------------------
-pca_full = np.vstack((benthic_pca[:,0], biomass_pca[:,0], benthic_pca[:,1], biomass_pca[:,1])).T
+pca_full = np.vstack((benthic_pca[:,0], benthic_pca[:,1], biomass_pca[:,0], biomass_pca[:,1])).T
 method = [ 'single', 'complete', 'average', 'ward' ]
 
 Y = pca_full
@@ -125,19 +127,20 @@ print ('\nPredicted Labels: {}'
 
 num_clusters = len (np.unique (Y_labels))
 
-plt.figure(figsize=(11.49,8))
-sns.scatterplot(
-    x = pca_full [:, 0], y = pca_full [:, 1],
-    hue     = Y_labels,
-    size    = pca_full [:, 0],
-    sizes   = (20, 300),
-    palette = sns.color_palette ("Set1", num_clusters),
-    data = pca_full,
-    #legend="full",
-    alpha=0.3
-)
+# plt.figure(figsize=(11.49,8))
+# sns.scatterplot(
+#     x = pca_full [:, 0], y = pca_full [:, 1],
+#     hue     = Y_labels,
+#     size    = pca_full [:, 0],
+#     sizes   = (20, 300),
+#     palette = sns.color_palette ("Set1", num_clusters),
+#     data = pca_full,
+#     #legend="full",
+#     alpha=0.3
+# )
 
-ax = plt.figure (figsize=(12,8)).gca(projection='3d')
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
 ax.scatter(
     xs = pca_full [:, 0], 
     ys = pca_full [:, 1], 
@@ -147,40 +150,95 @@ ax.scatter(
     cmap ='Set1'
 )
 
-ax.set_xlabel('pca-one')
-ax.set_ylabel('pca-two')
-ax.set_zlabel('pca-three')
+ax.set_xlabel('PCA1')
+ax.set_ylabel('PCA2')
+ax.set_zlabel('PCA3')
 # plt.show()
 
 Y_labels_full = np.copy (Y_labels)
 
-
-# ----------------------------------------------------------------------------
-# Supervised part
-# ----------------------------------------------------------------------------
-
-supervised = df.filter(['Label','Site','Latitude','Depth','Population','Effluent'], axis=1)
+supervised = df.filter(['Site','Depth', 'Hard coral', 'Macroalgae', 'CCA', 'Turf algae', 'Sand',
+       'Complexity','Herbivore (Grazer)', 'Herbivore (Scraper)','Herbivore (Browser)', 'Detritivore (exclusively)', 'Corallivore','Planktivore', 'Small Invert. Feeder', 'Large Invert. Feeder',
+       'Small Predator','Latitude','Depth','Population','Effluent','DistCoast', 'DistStream',
+       'Population', 'Effluent', 'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'], axis=1)
+# supervised = df.filter(['Site','Latitude','Depth','Population','Effluent'], axis=1)
 supervised['Label'] = Y_labels_full
-
 supervised.to_csv('supervised.csv', sep = ',', header = True)
 
-print(supervised)
+print(df.keys())
+# ----------------------------------------------------------------------------
+# Supervised - DecisionTree
+# ----------------------------------------------------------------------------
 
-y = supervised.iloc[:,5]
-X = supervised.iloc[:,1:5]
+# y = supervised.iloc[:,-1]
+# X = supervised.iloc[:,1:-1]
+
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# model = DecisionTreeRegressor(random_state=44)
+# model.fit(X_train, y_train)
+# predictions = model.predict(X_test)
+
+# # plt.figure(dpi=150)
+# # plot_tree(model, feature_names=X.columns)
+# # print(tree.export_text(model))
+# # plt.savefig('tree.png')
+# # plt.close()
+
+
+# print(accuracy_score(y_test, predictions))
+
+# ----------------------------------------------------------------------------
+# Supervised - MLP Classifier
+# ----------------------------------------------------------------------------
+
+import warnings
+from sklearn.datasets import fetch_openml
+from sklearn.exceptions import ConvergenceWarning
+from sklearn.neural_network import MLPClassifier
+
+y = supervised.iloc[:,-1]
+X = supervised.iloc[:,1:-1]
+
+# Scale the data
+scaler_x = StandardScaler()
+scaler_x.fit(X)
+X=scaler_x.transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
-model = DecisionTreeRegressor(random_state=44)
-model.fit(X_train, y_train)
-predictions = model.predict(X_test)
+# set up MLP Classifier
+mlp = MLPClassifier(    
+    hidden_layer_sizes=(20,20),    
+    max_iter=1500,    
+    alpha=1e-4,    
+    tol=1e-5,
+    solver="sgd",    
+    verbose=True,    
+    random_state=1,    
+    learning_rate_init=0.1
+    )
 
-# plt.figure(dpi=150)
-# plot_tree(model, feature_names=X.columns)
-print(tree.export_text(model))
-# plt.savefig('tree.png')
-# plt.close()
+with warnings.catch_warnings():    
+    warnings.filterwarnings("ignore", category=ConvergenceWarning, module="sklearn")    
+    mlp.fit(X_train, y_train)
+
+loss_curve = mlp.loss_curve_
+# validation_scores = mlp.validation_scores_
+epochs = range(mlp.n_iter_)
+
+figlearn = plt.figure()
+plt.plot(epochs,loss_curve)
+plt.grid()
+plt.xlabel("Epochs")
+plt.ylabel("Loss")
+plt.savefig("loss.png")
+
+print(f"Training set score: {mlp.score(X_train, y_train)}")
+print(f"Test set score: {mlp.score(X_test, y_test)}")
+
+print(df.keys())
+
 plt.show()
 
-print(accuracy_score(y_test, predictions))
 
