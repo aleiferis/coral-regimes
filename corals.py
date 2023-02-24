@@ -239,6 +239,91 @@ print(f"Test set score: {mlp.score(X_test, y_test)}")
 
 print(df.keys())
 
+# plt.show()
+
+# import geopandas as gpd
+# import matplotlib.pyplot as plt
+# import contextily as ctx
+# from shapely.geometry import Point
+# pd.options.display.max_rows = 10000
+# pd.options.display.max_columns = 10000
+
+# states = geopandas.read_file('cb_2018_us_aiannh_500k.shp')
+
+# states = states.to_crs("EPSG:3395")
+
+# hawaii = states[states['NAME'] == 'Hawaii']
+# print(hawaii)
+
+# states[states['NAME'] == 'Hawai'].plot(figsize=(12, 12))
+# print(states['NAME'])
+
+# plt.show()
+
+
+# countries = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
+# countries[countries["name"] == "Hawaii"].plot(color="lightgrey")
+
+
+from matplotlib.ticker import FuncFormatter
+import matplotlib.colors as mcolors
+from shapely.geometry import Polygon
+from shapely.geometry import Point
+import missingno as msno
+import os
+import wget
+import openpyxl
+import math
+import geopandas as gpd
+
+# filename = wget.download("https://www.ers.usda.gov/media/rbmpu1zi/mapdata2021.xlsx")
+df = pd.read_excel(os.getcwd()+'/mapdata2021.xlsx',skiprows=4)
+df = df.rename(columns={'Unnamed: 0':'state','Percent':'pct_food_insecure'})
+
+df = df[['state','pct_food_insecure']]
+
+msno.matrix(df)
+df = df[df.state.str.len()==2]
+# df.pct_food_insecure.hist()
+
+# wget.download("https://www2.census.gov/geo/tiger/GENZ2018/shp/cb_2018_us_state_500k.zip")
+gdf = gpd.read_file(os.getcwd()+'/cb_2018_us_state_500k')
+
+gdf = gdf.merge(df,left_on='STUSPS',right_on='state')
+
+# gdf.plot()
+
+final_crs = {'init': 'epsg:28992'}
+world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
+
+# NOTE: the convention for polygon points is (Long, Lat)....counterintuitive
+# polygon = Polygon([(-175,50),(-175,72),(-140, 72),(-140,50)])
+# polygon = Polygon([(-180,0),(-180,90),(-120,90),(-120,0)])
+
+# polygon=hipolygon
+# poly_gdf = gpd.GeoDataFrame( geometry=[polygon], crs=world.crs)
+
+# fig, ax1 = plt.subplots(1, figsize=(8, 18))
+# world.plot(ax=ax1)
+# poly_gdf.boundary.plot(ax = ax1, color="red")
+# ax1.set_title("The red polygon can be used to clip Alaska's western islands", fontsize=20)
+# ax1.set_axis_off()
+
+fig, ax = plt.subplots(figsize=(6.5, 6.5))
+polygon = Polygon([(-180,18),(-180,30),(-150, 30),(-150,18)])
+# apply1(alaska_gdf,0,36)
+gdf.clip(polygon).plot(ax=ax,color='lightblue', linewidth=0.8, edgecolor='0.8')
+
+
+
+
+
+
+amsterdamish = Point((-165, 24))
+gdf_am = geopandas.GeoSeries([amsterdamish])
+gdf_am.plot(ax=ax,markersize=3)
+
 plt.show()
+
 
 
