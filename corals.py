@@ -157,10 +157,8 @@ ax.set_zlabel('PCA3')
 
 Y_labels_full = np.copy (Y_labels)
 
-supervised = df.filter(['Site','Depth', 'Hard coral', 'Macroalgae', 'CCA', 'Turf algae', 'Sand',
-       'Complexity','Herbivore (Grazer)', 'Herbivore (Scraper)','Herbivore (Browser)', 'Detritivore (exclusively)', 'Corallivore','Planktivore', 'Small Invert. Feeder', 'Large Invert. Feeder',
-       'Small Predator','Latitude','Depth','Population','Effluent','DistCoast', 'DistStream',
-       'Population', 'Effluent', 'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'], axis=1)
+supervised = df.filter(['Site','Longitude','Latitude','Depth', 'Hard coral', 'Macroalgae', 'CCA', 
+                        'Turf algae', 'Sand','Complexity','Herbivore (Grazer)', 'Herbivore (Scraper)','Herbivore (Browser)', 'Detritivore (exclusively)', 'Corallivore','Planktivore', 'Small Invert. Feeder', 'Large Invert. Feeder','Small Predator','Depth','Population','Effluent','DistCoast', 'DistStream','Population', 'Effluent', 'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'], axis=1)
 # supervised = df.filter(['Site','Latitude','Depth','Population','Effluent'], axis=1)
 supervised['Label'] = Y_labels_full
 supervised.to_csv('supervised.csv', sep = ',', header = True)
@@ -198,7 +196,7 @@ from sklearn.exceptions import ConvergenceWarning
 from sklearn.neural_network import MLPClassifier
 
 y = supervised.iloc[:,-1]
-X = supervised.iloc[:,1:-1]
+X = supervised.iloc[:,2:-1]
 
 # Scale the data
 scaler_x = StandardScaler()
@@ -236,8 +234,6 @@ plt.savefig("loss.png")
 
 print(f"Training set score: {mlp.score(X_train, y_train)}")
 print(f"Test set score: {mlp.score(X_test, y_test)}")
-
-print(df.keys())
 
 # plt.show()
 
@@ -282,7 +278,7 @@ df = df.rename(columns={'Unnamed: 0':'state','Percent':'pct_food_insecure'})
 
 df = df[['state','pct_food_insecure']]
 
-msno.matrix(df)
+# msno.matrix(df)
 df = df[df.state.str.len()==2]
 # df.pct_food_insecure.hist()
 
@@ -314,14 +310,26 @@ polygon = Polygon([(-180,18),(-180,30),(-150, 30),(-150,18)])
 # apply1(alaska_gdf,0,36)
 gdf.clip(polygon).plot(ax=ax,color='lightblue', linewidth=0.8, edgecolor='0.8')
 
+locations = supervised 
+labels1 = []
+labels2 = []
+labels3 = [] 
 
+for i in range(0,len(locations)):
+    line = locations.iloc[i,:]
+    if (line['Label'] == 1):
+        labels1.append(Point((line['Longitude'],line['Latitude'])))    
+    if (line['Label'] == 2):
+        labels2.append(Point((line['Longitude'],line['Latitude'])))  
+    if (line['Label'] == 3):
+        labels3.append(Point((line['Longitude'],line['Latitude'])))  
 
-
-
-
-amsterdamish = Point((-165, 24))
-gdf_am = geopandas.GeoSeries([amsterdamish])
-gdf_am.plot(ax=ax,markersize=3)
+gdf_l1 = geopandas.GeoSeries(labels1)
+gdf_l1.plot(ax=ax,markersize=3,color='r',label='1 - Hard Coral')
+gdf_l2 = geopandas.GeoSeries(labels2)
+gdf_l2.plot(ax=ax,markersize=3,color='b',label='2 - Turf Algae')
+gdf_l3 = geopandas.GeoSeries(labels3)
+gdf_l3.plot(ax=ax,markersize=3,color='g',label='3 - Macro Algae').legend()
 
 plt.show()
 
