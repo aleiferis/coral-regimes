@@ -115,6 +115,10 @@ dist_lim = np.quantile (Y_links [:,2], 1)
 #Y_labels = fcluster (Y_links, dist_lim, criterion ='distance', depth = 2)
 Y_labels = fcluster (Y_links, t = 3, criterion = 'maxclust')
 
+
+# plotting.plot_dendrogram(fc)
+
+
 plotting.biplot(benthic_pca[:,0:2],pca_benth.components_,names=benthic_names,labels=Y_labels)
 plotting.biplot(biomass_pca[:,0:2],pca_biom.components_,names=biomass_names,labels=Y_labels)
 
@@ -157,13 +161,25 @@ ax.set_zlabel('PCA3')
 
 Y_labels_full = np.copy (Y_labels)
 
-supervised = df.filter(['Site','Longitude','Latitude','Depth', 'Hard coral', 'Macroalgae', 'CCA', 
-                        'Turf algae', 'Sand','Complexity','Herbivore (Grazer)', 'Herbivore (Scraper)','Herbivore (Browser)', 'Detritivore (exclusively)', 'Corallivore','Planktivore', 'Small Invert. Feeder', 'Large Invert. Feeder','Small Predator','Depth','Population','Effluent','DistCoast', 'DistStream','Population', 'Effluent', 'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'], axis=1)
-# supervised = df.filter(['Site','Latitude','Depth','Population','Effluent'], axis=1)
-supervised['Label'] = Y_labels_full
-supervised.to_csv('supervised.csv', sep = ',', header = True)
+supervised = df.filter(['Site','Longitude','Latitude', 'Hard coral', 'Macroalgae', 'CCA', 
+                        'Turf algae', 'Sand','Complexity','Herbivore (Grazer)', 'Herbivore (Scraper)',
+                        'Herbivore (Browser)', 'Detritivore (exclusively)', 'Corallivore','Planktivore', 
+                        'Small Invert. Feeder', 'Large Invert. Feeder','Small Predator','Depth',
+                        'DistCoast', 'DistStream','Population', 'Effluent', 
+                        'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'],
+                        axis=1)
 
-print(df.keys())
+supervised = df.filter(['Site','Longitude','Latitude','Depth','DistCoast', 'DistStream','Population', 'Effluent', 'UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex', 'FragIndex', 'DitchIndex'], axis=1)
+
+# print(supervised["Population"])
+# supervised = supervised[supervised["Label"]!=1]
+# supervised = df.filter(['Site','Latitude','Depth','Population','Effluent','DistCoast', 'DistStream',
+#                         'Population', 'Effluent','UrbanIndex', 'PointIndex', 'AgrIndex','FormPlIndex',
+#                         'FragIndex', 'DitchIndex'], axis=1)
+# supervised['Label'] = Y_labels_full[np.where(np.array(supervised["Label"])!=1.0)]
+supervised['Label'] = Y_labels_full
+supervised[supervised['Label']==3]=2 
+supervised.to_csv('supervised.csv', sep = ',', header = True)
 # ----------------------------------------------------------------------------
 # Supervised - DecisionTree
 # ----------------------------------------------------------------------------
@@ -196,7 +212,7 @@ from sklearn.exceptions import ConvergenceWarning
 from sklearn.neural_network import MLPClassifier
 
 y = supervised.iloc[:,-1]
-X = supervised.iloc[:,2:-1]
+X = supervised.iloc[:,1:-1]
 
 # Scale the data
 scaler_x = StandardScaler()
@@ -207,9 +223,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 # set up MLP Classifier
 mlp = MLPClassifier(    
-    hidden_layer_sizes=(20,20),    
+    hidden_layer_sizes=(15,),    
     max_iter=1500,    
-    alpha=1e-4,    
+    alpha=1e-5,    
     tol=1e-5,
     solver="sgd",    
     verbose=True,    
